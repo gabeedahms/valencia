@@ -3766,6 +3766,34 @@ body.is-menu-visible #menu {
 	z-index: 1;
 }
 
+#banner h2:before, #banner h2:after {
+	-moz-transition: width 0.85s ease;
+	-webkit-transition: width 0.85s ease;
+	-ms-transition: width 0.85s ease;
+	transition: width 0.85s ease;
+	-moz-transition-delay: 0.25s;
+	-webkit-transition-delay: 0.25s;
+	-ms-transition-delay: 0.25s;
+	transition-delay: 0.25s;
+	background: #fff;
+	content: '';
+	display: block;
+	height: 2px;
+	position: absolute;
+	width: 100%;
+}
+
+#banner h2:before {
+	top: 0;
+	left: 0;
+}
+
+#banner h2:after {
+	bottom: 0;
+	right: 0;
+}
+
+
 /* El resto del código sigue igual */
 
 
