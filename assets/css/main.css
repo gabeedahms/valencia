@@ -3743,13 +3743,15 @@ body.is-menu-visible #menu {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	/* Asegura que el video cubra todo el área */
 	z-index: -1;
-	/* Pone el video detrás del contenido */
+	
 }
 
-/* El resto de los estilos para el texto dentro del banner se mantienen igual */
+
 #banner h2 {
+	background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con transparencia */
+    color: white;
+    display: inline-block;
 	-moz-transform: scale(1);
 	-webkit-transform: scale(1);
 	-ms-transform: scale(1);
@@ -3758,7 +3760,6 @@ body.is-menu-visible #menu {
 	-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
 	-ms-transition: -ms-transform 0.5s ease, opacity 0.5s ease;
 	transition: transform 0.5s ease, opacity 0.5s ease;
-	display: inline-block;
 	font-size: 1.75em;
 	opacity: 1;
 	padding: 0.35em 1em;
@@ -3796,15 +3797,33 @@ body.is-menu-visible #menu {
 
 /* El resto del código sigue igual */
 
-
 #banner p {
 	letter-spacing: 0.225em;
-	text-transform: uppercase;
+	text-transform: uppercase;	
+	color: rgb(255, 255, 255);
+	background-color: rgba(0, 0, 0, 0.7);
+	-moz-transition: width 0.85s ease;
+	-webkit-transition: width 0.85s ease;
+	-ms-transition: width 0.85s ease;
+	transition: width 0.85s ease;
+	-moz-transition-delay: 0.25s;
+	-webkit-transition-delay: 0.25s;
+	-ms-transition-delay: 0.25s;
+	transition-delay: 0.25s;
+	width: fit-content;
+	text-align: center;
+	display: inline-block;
+	padding:0.5em;
 }
 
-#banner p a {
+
+
+#banner p a {	
 	color: inherit;
 }
+
+
+
 
 #banner .more {
 	-moz-transition: -moz-transform 0.75s ease, opacity 0.75s ease;
@@ -3835,6 +3854,7 @@ body.is-menu-visible #menu {
 	text-transform: uppercase;
 	width: 16em;
 	z-index: 1;
+	font-weight: bold;
 }
 
 #banner .more:after {
@@ -3895,9 +3915,9 @@ body.is-menu-visible #menu {
 
 }
 
-/* #banner video {
-	transition: filter 0.01s ease; 
-}  */
+#banner video {
+    transition: filter 5s ease-in-out; /* Hace la transición más lenta */
+}
 
 
 body.is-preload #banner h2 {
@@ -4172,3 +4192,55 @@ body.is-mobile.landing .wrapper.style4 {
 body.is-mobile.landing #footer {
 	background-color: #1d242a;
 }
+
+
+@media screen and (max-width: 800px) {
+    #banner {
+        min-height: 100vh; /* altura completa del celular */
+        position: relative;
+        overflow: hidden;
+    }
+
+    #banner video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* altura completa */
+        object-fit: cover;
+    }
+
+    #banner .inner {
+        z-index: 2;
+        position: relative;
+        text-align: center;
+        padding: 1em;
+        margin-top: 0;
+    }
+
+    #banner .more {
+        display: inline-block !important;
+        position: absolute;
+        bottom: 2em; 
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+    }
+
+	#banner h2 {
+        font-size: 1.1em;
+        padding: 0.5em;
+        width: auto;
+        margin: 0 auto;
+        display: inline-block;
+        background-color: rgba(0,0,0,0.7);
+    }
+    #banner p {
+        font-size: 0.8em;
+        padding: 0.5em;
+        width: auto;
+        margin: 0 auto;
+        display: inline-block;
+        background-color: rgba(0,0,0,0.7);
+    }
+}	
