@@ -1,0 +1,282 @@
+/* =====================================================================
+   VALENCIA PELUQUERÍA — Design System Foundations
+   Colors + Typography tokens for a warm, elegant salon brand.
+   Pure CSS custom properties. No build step, no framework.
+   Import this once at the top of any page:
+       <link rel="stylesheet" href="colors_and_type.css">
+   Fonts load from Google Fonts (see @import). For production / offline,
+   self-host the .woff2 files into /fonts and swap the @import for
+   @font-face rules — the token names below stay identical.
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ---------------------------------------------------------------
+     COLOR — RAW PALETTE
+     Warm, beauty-salon oriented. Espresso black from the storefront,
+     honey/caramel gold from the signature copper-blonde hair work,
+     soft cream paper, warm taupe neutrals, a clay accent.
+     --------------------------------------------------------------- */
+
+  /* Warm neutrals (dark → light) */
+  --noir:        #14100C;  /* warm near-black, max-contrast type & fills */
+  --espresso:    #1E1813;  /* near-black, primary text + dark sections   */
+  --ink:         #2C241D;  /* slightly lifted dark surface               */
+  --cocoa:       #4A3E34;  /* dark UI on cream / strong body             */
+  --mocha:       #6B5C4D;  /* secondary text                            */
+  --taupe:       #9A8A78;  /* tertiary text, muted captions             */
+  --sand:        #C9BBA8;  /* hairlines on dark, disabled               */
+  --linen:       #E7DCCB;  /* soft card / section fill                  */
+  --almond:      #F1E9DC;  /* raised card on cream                      */
+  --cream:       #F8F2E9;  /* default page background                   */
+  --ivory:       #FCF8F2;  /* lightest surface                          */
+  --white:       #FFFFFF;
+
+  /* Signature warm accent — warm brown / caramel (no gold-yellow, no red) */
+  --coffee:      #3D2F25;  /* deep warm brown                            */
+  --toffee:      #8A6038;  /* primary warm-brown accent (signature)      */
+  --toffee-deep: #6E4B2B;  /* hover / AA-ish text on light               */
+  --pecan:       #B98E68;  /* lighter warm brown                         */
+  --oat:         #D9CDBA;  /* warm tint / fill                           */
+  --oat-wash:    #EFE6D7;  /* faintest warm wash background              */
+
+  /* legacy gold aliases retained so existing components keep working;
+     point them at the warm-brown ramp for a gold-free palette */
+  --gold:        #8A6038;
+  --gold-deep:   #6E4B2B;
+  --gold-soft:   #D9CDBA;
+  --gold-wash:   #EFE6D7;
+
+  /* Secondary warm — soft clay-brown (kept muted, non-red) */
+  --clay:        #9A7558;  /* muted warm brown                           */
+  --clay-soft:   #DECBB8;  /* clay tint                                  */
+  --blush:       #CBB4A0;  /* soft warm neutral                          */
+
+  /* Brand / functional */
+  --whatsapp:        #8FA86A;  /* soft olive green (icons/badges)        */
+  --whatsapp-deep:   #6F8C44;  /* pastel olive CTA — white text on light */
+  --whatsapp-press:  #5C7536;  /* pressed state                          */
+
+  /* Semantic status */
+  --success:   #2F8F5B;
+  --error:     #B23B3B;
+  --warning:   #C8902F;
+
+  /* ---------------------------------------------------------------
+     COLOR — SEMANTIC ROLES  (use THESE in components)
+     --------------------------------------------------------------- */
+  --bg:            var(--cream);     /* page background                  */
+  --bg-raised:     var(--ivory);     /* cards, raised surfaces           */
+  --bg-sunken:     var(--linen);     /* wells, alternating sections      */
+  --bg-inverse:    var(--espresso);  /* dark sections / footer           */
+
+  --fg:            var(--espresso);  /* primary text                     */
+  --fg-muted:      var(--mocha);     /* secondary text                   */
+  --fg-subtle:     var(--taupe);     /* captions, meta, placeholders     */
+  --fg-on-dark:    var(--ivory);     /* text on dark surfaces            */
+  --fg-on-dark-muted: #C4B6A3;       /* secondary text on dark           */
+
+  --accent:        var(--gold);      /* primary accent                   */
+  --accent-strong: var(--gold-deep); /* accent text/hover on light       */
+  --accent-tint:   var(--gold-wash); /* accent background wash           */
+
+  --line:          #DED2C0;          /* default hairline on cream        */
+  --line-strong:   #C9BBA8;          /* stronger divider                 */
+  --line-on-dark:  rgba(255,255,255,.14);
+
+  --focus-ring:    var(--gold-deep);
+
+  /* ---------------------------------------------------------------
+     TYPOGRAPHY — FAMILIES
+     Display : Marcellus — classical Roman serif caps; echoes the
+               carved storefront wordmark. Headlines + wordmark.
+     Serif   : Cormorant Garamond — high-contrast editorial serif for
+               large pull-quotes / elegant subheads.
+     Sans    : Jost — refined geometric sans; body, UI, nav, buttons.
+     --------------------------------------------------------------- */
+  --font-display: 'Marcellus', 'Times New Roman', serif;
+  --font-serif:   'Cormorant Garamond', Georgia, serif;
+  --font-sans:    'Jost', 'Helvetica Neue', Arial, sans-serif;
+  /* Wordmark — clean humanist sans, set in spaced uppercase */
+  --font-wordmark:'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  /* ---------------------------------------------------------------
+     TYPE SCALE  (fluid where it matters; rem-based)
+     base = 17px. Modular-ish scale tuned for editorial salon feel.
+     --------------------------------------------------------------- */
+  --text-xs:   0.75rem;   /* 12.75 — legal, micro labels   */
+  --text-sm:   0.875rem;  /* 14.9  — meta, captions        */
+  --text-base: 1rem;      /* 17    — body                  */
+  --text-md:   1.1875rem; /* 20    — lead body             */
+  --text-lg:   1.5rem;    /* 25.5  — h4 / card title       */
+  --text-xl:   2rem;      /* 34    — h3                    */
+  --text-2xl:  2.75rem;   /* 47    — h2                    */
+  --text-3xl:  clamp(3rem, 6vw, 4.5rem);   /* h1          */
+  --text-hero: clamp(3.5rem, 11vw, 8rem);  /* hero display */
+
+  /* Weights */
+  --fw-light:   300;
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;
+
+  /* Line heights */
+  --lh-tight:  1.05;
+  --lh-snug:   1.18;
+  --lh-normal: 1.5;
+  --lh-relaxed:1.65;
+
+  /* Letter spacing — Marcellus caps want air; Jost labels too */
+  --ls-hero:    0.02em;
+  --ls-display: 0.04em;
+  --ls-caps:    0.22em;   /* eyebrow / overline caps        */
+  --ls-caps-sm: 0.16em;   /* buttons, nav                   */
+  --ls-body:    0.005em;
+
+  /* ---------------------------------------------------------------
+     SPACING — 4px base scale
+     --------------------------------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10:128px;
+  --space-11:160px;
+
+  /* Section rhythm */
+  --section-y:        clamp(64px, 11vw, 160px);
+  --container:        1200px;
+  --container-narrow: 760px;
+  --gutter:           clamp(20px, 5vw, 48px);
+
+  /* ---------------------------------------------------------------
+     RADII — soft, not bubbly. Salon = refined, slightly organic.
+     --------------------------------------------------------------- */
+  --r-xs:   4px;
+  --r-sm:   8px;
+  --r-md:   14px;
+  --r-lg:   22px;
+  --r-xl:   34px;
+  --r-pill: 999px;
+
+  /* ---------------------------------------------------------------
+     SHADOWS — soft, warm-tinted (never pure black). Used sparingly.
+     --------------------------------------------------------------- */
+  --shadow-xs: 0 1px 2px rgba(46,36,29,.06);
+  --shadow-sm: 0 2px 8px rgba(46,36,29,.07);
+  --shadow-md: 0 10px 30px -12px rgba(46,36,29,.18);
+  --shadow-lg: 0 24px 60px -24px rgba(46,36,29,.28);
+  --shadow-gold: 0 14px 40px -16px rgba(161,116,58,.40);
+
+  /* Motion */
+  --ease:       cubic-bezier(.22,.61,.36,1);
+  --ease-out:   cubic-bezier(.16,1,.3,1);
+  --dur-fast:   140ms;
+  --dur:        260ms;
+  --dur-slow:   520ms;
+}
+
+/* =====================================================================
+   SEMANTIC TYPE CLASSES
+   Drop-in classes so implementers don't re-derive sizes each time.
+   ===================================================================== */
+
+.u-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--text-sm);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.u-display {            /* hero wordmark-scale display */
+  font-family: var(--font-display);
+  font-weight: var(--fw-regular);
+  font-size: var(--text-hero);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-hero);
+  color: var(--fg);
+}
+
+h1, .u-h1 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-regular);
+  font-size: var(--text-3xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  color: var(--fg);
+}
+
+h2, .u-h2 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-regular);
+  font-size: var(--text-2xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-display);
+  color: var(--fg);
+}
+
+h3, .u-h3 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-regular);
+  font-size: var(--text-xl);
+  line-height: var(--lh-snug);
+  color: var(--fg);
+}
+
+h4, .u-h4 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--text-lg);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-body);
+  color: var(--fg);
+}
+
+.u-quote {              /* editorial pull-quote */
+  font-family: var(--font-serif);
+  font-weight: var(--fw-500, 500);
+  font-size: var(--text-2xl);
+  font-style: italic;
+  line-height: var(--lh-snug);
+  color: var(--fg);
+}
+
+.u-lead {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-light);
+  font-size: var(--text-md);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-muted);
+}
+
+body, p, .u-body {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  font-size: var(--text-base);
+  line-height: var(--lh-relaxed);
+  letter-spacing: var(--ls-body);
+  color: var(--fg);
+}
+
+.u-small {
+  font-size: var(--text-sm);
+  line-height: var(--lh-normal);
+  color: var(--fg-muted);
+}
+
+.u-meta {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--text-xs);
+  letter-spacing: var(--ls-caps-sm);
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
