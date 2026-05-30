@@ -6,3 +6,6 @@
 tmp/
 temp/
 scripts/
+cgi-bin/
+public_html_old/
+.claude/skills/
