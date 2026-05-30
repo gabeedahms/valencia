@@ -5,7 +5,8 @@
 *.log
 tmp/
 temp/
-scripts/
+scripts/*
+!scripts/deploy.sh
 cgi-bin/
 public_html_old/
 public_html2/
