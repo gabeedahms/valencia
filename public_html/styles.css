@@ -168,6 +168,7 @@ img { display: block; max-width: 100%; }
   .hdr__nav { display: none; }
   .hdr__burger { display: grid; place-items: center; }
   .hdr__right .btn { display: none; }
+  .hero__inner { padding-bottom: 110px; }
   .svc-grid { grid-template-columns: 1fr; gap: 16px; }
   .spot, .spot.rev { grid-template-columns: 1fr; }
   .spot.rev .spot__media { order: 0; }
