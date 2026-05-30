@@ -175,7 +175,7 @@ img { display: block; max-width: 100%; }
   /* Hero mobile */
   .hero { flex-direction: column; align-items: center; justify-content: space-between; }
   .hero__inner { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-  .hero__media { background: #14100c; }
+  .hero__media { background: #14100c url('assets/img/background_mobile.png') center/cover no-repeat; }
   .hero__video { display: none; }
   .hero__scroll { position: relative; left: auto; bottom: auto; transform: none; padding: 16px 0 28px; }
 
