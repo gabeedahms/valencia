@@ -531,7 +531,7 @@ img { display: block; max-width: 100%; }
 .spot + .spot { margin-top: var(--section-y); }
 .spot.rev .spot__media { order: 2; }
 .spot__media { position: relative; border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 4/5; }
-.spot__media img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-slow) var(--ease-out); }
+.spot__media img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform var(--dur-slow) var(--ease-out); }
 .spot__media:hover img { transform: scale(1.04); }
 .spot h2 { margin: 18px 0 0; }
 .spot p { margin: 16px 0 0; color: var(--fg-muted); line-height: 1.65; }
