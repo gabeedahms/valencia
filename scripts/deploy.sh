@@ -50,6 +50,23 @@ fi
 
 echo "Deploying commit $LOCAL_COMMIT from main to Donweb..."
 
+# Inline all.css into index.html en un directorio temporal para eliminar
+# el request HTTP bloqueante — mejora LCP en ~990ms en Donweb.
+DEPLOY_DIR="$(mktemp -d)"
+trap 'rm -rf "$DEPLOY_DIR"' EXIT
+cp -r ./public_html/. "$DEPLOY_DIR/"
+python3 - <<PYEOF
+import re, pathlib
+css  = pathlib.Path('public_html/all.css').read_text()
+idx  = pathlib.Path('public_html/index.html').read_text()
+inlined = idx.replace(
+    '<link rel="stylesheet" href="all.css">',
+    '<style>' + css + '</style>'
+)
+pathlib.Path('$DEPLOY_DIR/index.html').write_text(inlined)
+PYEOF
+echo "CSS inlineado en index.html para deploy."
+
 lftp -u "$FTP_USER","$FTP_PASS" "$FTP_HOST" <<EOF
 set ftp:ssl-allow no
 set net:timeout 20
@@ -71,7 +88,7 @@ mirror -R \
   --exclude-glob "cgi-bin/" \
   --exclude-glob ".ht_leame" \
   --exclude-glob ".htpasswd" \
-  ./public_html/ "$FTP_REMOTE_DIR"
+  $DEPLOY_DIR/ "$FTP_REMOTE_DIR"
 
 bye
 EOF
