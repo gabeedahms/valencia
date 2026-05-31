@@ -44,7 +44,7 @@ img { display: block; max-width: 100%; }
 .hero__eyebrow::before { background: var(--gold-soft); }
 /* Headline — reduced from --text-hero per request (smaller display size) */
 .hero h1 { color: var(--ivory); font-family: var(--font-display); font-weight: var(--fw-regular);
-  font-size: clamp(1.8rem, 3.8vw, 3rem); line-height: var(--lh-tight); letter-spacing: var(--ls-hero);
+  font-size: clamp(1.3rem, 2.5vw, 2rem); line-height: var(--lh-tight); letter-spacing: var(--ls-hero);
   margin: 22px 0 0; display: inline-block;
   border: 1px solid rgba(255,255,255,0.28); padding: 20px 36px;
   background: rgba(10,8,6,0.32); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
