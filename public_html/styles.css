@@ -55,6 +55,9 @@ img { display: block; max-width: 100%; }
   display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; }
 .hero__scroll .dot { width: 1px; height: 34px; background: linear-gradient(var(--gold-soft), transparent); animation: scrollcue 1.8s var(--ease-out) infinite; }
 @keyframes scrollcue { 0%{transform:scaleY(.3);transform-origin:top;opacity:.4} 50%{transform:scaleY(1);opacity:1} 100%{transform:scaleY(.3);transform-origin:bottom;opacity:.4} }
+@keyframes btn-ring { 0%{box-shadow:0 0 0 0 rgba(217,205,186,.50)} 70%{box-shadow:0 0 0 14px rgba(217,205,186,.00)} 100%{box-shadow:0 0 0 0 rgba(217,205,186,.00)} }
+.hero__actions .btn--primary { animation: btn-ring 2.2s var(--ease-out) infinite; }
+.hero__actions .btn--primary:hover { animation: none; }
 
 /* ---------- Section head ---------- */
 .shead { max-width: 640px; }
