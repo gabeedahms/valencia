@@ -390,6 +390,15 @@ body, p, .u-body {
    ===================================================================== */
 
 @font-face {
+  font-family: 'Marcellus';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/marcellus-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
   font-family: "FA Solid";
   font-style: normal;
   font-weight: 900;
@@ -482,7 +491,7 @@ img { display: block; max-width: 100%; }
   font-size: clamp(1.3rem, 2.5vw, 2rem); line-height: var(--lh-tight); letter-spacing: var(--ls-hero);
   margin: 22px 0 0; display: inline-block;
   border: 1px solid rgba(255,255,255,0.28); padding: 20px 36px;
-  background: rgba(10,8,6,0.32); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  background: rgba(10,8,6,0.48);
   border-radius: 4px; }
 .hero__tag { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.4rem, 3.2vw, 2.1rem); color: var(--gold-soft); margin: 18px 0 0; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px; justify-content: center; }
